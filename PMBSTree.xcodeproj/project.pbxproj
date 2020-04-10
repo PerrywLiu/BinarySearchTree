@@ -16,6 +16,8 @@
 		BC9CBA26244098B4007A1C82 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9CBA25244098B4007A1C82 /* main.m */; };
 		BC9CBA30244098B4007A1C82 /* PMBSTreeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9CBA2F244098B4007A1C82 /* PMBSTreeTests.m */; };
 		BC9CBA3B244098B4007A1C82 /* PMBSTreeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9CBA3A244098B4007A1C82 /* PMBSTreeUITests.m */; };
+		BC9CBA4A244098DE007A1C82 /* PMTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9CBA49244098DE007A1C82 /* PMTreeNode.m */; };
+		BC9CBA4D244099A1007A1C82 /* PMBSTree.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9CBA4C244099A1007A1C82 /* PMBSTree.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,10 @@
 		BC9CBA36244098B4007A1C82 /* PMBSTreeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PMBSTreeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC9CBA3A244098B4007A1C82 /* PMBSTreeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMBSTreeUITests.m; sourceTree = "<group>"; };
 		BC9CBA3C244098B4007A1C82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC9CBA48244098DE007A1C82 /* PMTreeNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMTreeNode.h; sourceTree = "<group>"; };
+		BC9CBA49244098DE007A1C82 /* PMTreeNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMTreeNode.m; sourceTree = "<group>"; };
+		BC9CBA4B244099A1007A1C82 /* PMBSTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMBSTree.h; sourceTree = "<group>"; };
+		BC9CBA4C244099A1007A1C82 /* PMBSTree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMBSTree.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,10 @@
 				BC9CBA21244098B4007A1C82 /* LaunchScreen.storyboard */,
 				BC9CBA24244098B4007A1C82 /* Info.plist */,
 				BC9CBA25244098B4007A1C82 /* main.m */,
+				BC9CBA48244098DE007A1C82 /* PMTreeNode.h */,
+				BC9CBA49244098DE007A1C82 /* PMTreeNode.m */,
+				BC9CBA4B244099A1007A1C82 /* PMBSTree.h */,
+				BC9CBA4C244099A1007A1C82 /* PMBSTree.m */,
 			);
 			path = PMBSTree;
 			sourceTree = "<group>";
@@ -271,6 +281,8 @@
 				BC9CBA15244098B1007A1C82 /* AppDelegate.m in Sources */,
 				BC9CBA26244098B4007A1C82 /* main.m in Sources */,
 				BC9CBA18244098B1007A1C82 /* SceneDelegate.m in Sources */,
+				BC9CBA4A244098DE007A1C82 /* PMTreeNode.m in Sources */,
+				BC9CBA4D244099A1007A1C82 /* PMBSTree.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
