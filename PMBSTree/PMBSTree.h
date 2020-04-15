@@ -87,11 +87,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param node 节点
 - (NSUInteger)treeHeightAlternateFromNode:(PMTreeNode *)node;
 
-/// 比较两个节点的大小 0:value1 == value2,  1:value1>value2,   -1:value1<value2
-/// @param value1 节点1
-/// @param value2 节点2
-- (NSInteger)compareE1:(id)value1 withE2:(id)value2;
-
 /// 寻找前驱节点
 /// @param node 当前节点
 - (PMTreeNode *)predecessorNode:(PMTreeNode *)node;
