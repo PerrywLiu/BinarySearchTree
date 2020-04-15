@@ -83,9 +83,12 @@
 //        NSLog(@"%@",node.value);
 //    }];
 //
-//    ///求二叉树高度
-//    NSUInteger height = [tree treeHeight];
-//    NSLog(@"高度为：%ld",height);
+    ///求二叉树高度
+    NSUInteger height = [tree treeHeight];
+    NSLog(@"高度为：%ld",height);
+    
+    NSUInteger height2 = [tree treeHeightAlternateFromNode:[tree rootNode]];
+    NSLog(@"利用层序遍历 高度为：%ld",height2);
 //
 //    ///求二叉树元素个数
 //    NSUInteger size = [tree treeSize];

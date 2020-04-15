@@ -201,7 +201,40 @@
         return 0;
     }
     
+    ///递归法
     return 1 + MAX([self treeHeightFromNode:node.left], [self treeHeightFromNode:node.right]);
+}
+
+- (NSUInteger)treeHeightAlternateFromNode:(PMTreeNode *)node
+{
+    if (node == nil) {
+        return 0;
+    }
+    
+    NSMutableArray *mArray = [[NSMutableArray alloc]init];
+    [mArray addObject:_rootNode];
+    NSUInteger height = 0;
+    NSUInteger levelSize = 1;
+    
+    while (mArray.count > 0) {
+        levelSize--;
+        PMTreeNode *node = [mArray objectAtIndex:0];
+        [mArray removeObjectAtIndex:0];
+        
+        if (node.left) {
+            [mArray addObject:node.left];
+        }
+        if (node.right) {
+            [mArray addObject:node.right];
+        }
+        
+        if (levelSize == 0) {
+            levelSize = mArray.count;
+            height++;
+        }
+    }
+    
+    return height;
 }
 
 - (BOOL)containsElement:(id)element

@@ -70,9 +70,13 @@ NS_ASSUME_NONNULL_BEGIN
 /// 从根节点开始的二叉树高度
 - (NSUInteger)treeHeight;
 
-/// 从某个节点开始的二叉搜索树高度
+/// 从某个节点开始的二叉搜索树高度，递归
 /// @param node 节点
 - (NSUInteger)treeHeightFromNode:(PMTreeNode *)node;
+
+/// 利用层序遍历求树的高度
+/// @param node 节点
+- (NSUInteger)treeHeightAlternateFromNode:(PMTreeNode *)node;
 
 /// 比较两个节点的大小 0:value1 == value2,  1:value1>value2,   -1:value1<value2
 /// @param value1 节点1
