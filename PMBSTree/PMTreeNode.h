@@ -10,17 +10,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PMTreeNode : NSObject
+@interface PMTreeNode : NSObject<NSCopying>
 
 /// 左子树
-@property (nonatomic, strong) PMTreeNode *left;
+@property (nonatomic, nullable, strong) PMTreeNode *left;
 /// 右子树
-@property (nonatomic, strong) PMTreeNode *right;
+@property (nonatomic, nullable, strong) PMTreeNode *right;
 /// 父节点
-@property (nonatomic, strong) PMTreeNode *parent;
+@property (nonatomic, nullable, strong) PMTreeNode *parent;
 
 /// 节点值
-@property (nonatomic, strong) id value;
+@property (nonatomic, nullable, strong) id value;
 
 - (instancetype)initValue:(id)value withParent:(nullable PMTreeNode *)parent;
 

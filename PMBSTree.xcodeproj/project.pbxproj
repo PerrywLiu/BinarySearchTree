@@ -18,6 +18,10 @@
 		BC9CBA3B244098B4007A1C82 /* PMBSTreeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9CBA3A244098B4007A1C82 /* PMBSTreeUITests.m */; };
 		BC9CBA4A244098DE007A1C82 /* PMTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9CBA49244098DE007A1C82 /* PMTreeNode.m */; };
 		BC9CBA4D244099A1007A1C82 /* PMBSTree.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9CBA4C244099A1007A1C82 /* PMBSTree.m */; };
+		BC9DF67F24448277000B3AF0 /* MJInorderPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9DF67A24448277000B3AF0 /* MJInorderPrinter.m */; };
+		BC9DF68024448277000B3AF0 /* MJLevelOrderPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9DF67C24448277000B3AF0 /* MJLevelOrderPrinter.m */; };
+		BC9DF68124448277000B3AF0 /* MJPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9DF67D24448277000B3AF0 /* MJPrinter.m */; };
+		BC9DF684244484C8000B3AF0 /* NSString+Trees.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9DF683244484C8000B3AF0 /* NSString+Trees.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +64,15 @@
 		BC9CBA49244098DE007A1C82 /* PMTreeNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMTreeNode.m; sourceTree = "<group>"; };
 		BC9CBA4B244099A1007A1C82 /* PMBSTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMBSTree.h; sourceTree = "<group>"; };
 		BC9CBA4C244099A1007A1C82 /* PMBSTree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMBSTree.m; sourceTree = "<group>"; };
+		BC9DF67924448277000B3AF0 /* MJLevelOrderPrinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJLevelOrderPrinter.h; sourceTree = "<group>"; };
+		BC9DF67A24448277000B3AF0 /* MJInorderPrinter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJInorderPrinter.m; sourceTree = "<group>"; };
+		BC9DF67B24448277000B3AF0 /* MJPrinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPrinter.h; sourceTree = "<group>"; };
+		BC9DF67C24448277000B3AF0 /* MJLevelOrderPrinter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJLevelOrderPrinter.m; sourceTree = "<group>"; };
+		BC9DF67D24448277000B3AF0 /* MJPrinter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPrinter.m; sourceTree = "<group>"; };
+		BC9DF67E24448277000B3AF0 /* MJInorderPrinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJInorderPrinter.h; sourceTree = "<group>"; };
+		BC9DF682244484C8000B3AF0 /* NSString+Trees.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Trees.h"; sourceTree = "<group>"; };
+		BC9DF683244484C8000B3AF0 /* NSString+Trees.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Trees.m"; sourceTree = "<group>"; };
+		BC9DF685244484D8000B3AF0 /* MJBinaryTreeInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJBinaryTreeInfo.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +123,7 @@
 		BC9CBA12244098B1007A1C82 /* PMBSTree */ = {
 			isa = PBXGroup;
 			children = (
+				BC9DF67824448277000B3AF0 /* MJPrinter */,
 				BC9CBA13244098B1007A1C82 /* AppDelegate.h */,
 				BC9CBA14244098B1007A1C82 /* AppDelegate.m */,
 				BC9CBA16244098B1007A1C82 /* SceneDelegate.h */,
@@ -145,6 +159,23 @@
 				BC9CBA3C244098B4007A1C82 /* Info.plist */,
 			);
 			path = PMBSTreeUITests;
+			sourceTree = "<group>";
+		};
+		BC9DF67824448277000B3AF0 /* MJPrinter */ = {
+			isa = PBXGroup;
+			children = (
+				BC9DF685244484D8000B3AF0 /* MJBinaryTreeInfo.h */,
+				BC9DF682244484C8000B3AF0 /* NSString+Trees.h */,
+				BC9DF683244484C8000B3AF0 /* NSString+Trees.m */,
+				BC9DF67924448277000B3AF0 /* MJLevelOrderPrinter.h */,
+				BC9DF67A24448277000B3AF0 /* MJInorderPrinter.m */,
+				BC9DF67B24448277000B3AF0 /* MJPrinter.h */,
+				BC9DF67C24448277000B3AF0 /* MJLevelOrderPrinter.m */,
+				BC9DF67D24448277000B3AF0 /* MJPrinter.m */,
+				BC9DF67E24448277000B3AF0 /* MJInorderPrinter.h */,
+			);
+			name = MJPrinter;
+			path = "../../../../../Downloads/BinaryTrees-master/BinaryTreePrinterOC/BinaryTreePrinterOC/MJBinaryTrees/MJPrinter";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,12 +308,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC9DF68124448277000B3AF0 /* MJPrinter.m in Sources */,
+				BC9DF67F24448277000B3AF0 /* MJInorderPrinter.m in Sources */,
 				BC9CBA1B244098B1007A1C82 /* ViewController.m in Sources */,
 				BC9CBA15244098B1007A1C82 /* AppDelegate.m in Sources */,
 				BC9CBA26244098B4007A1C82 /* main.m in Sources */,
+				BC9DF684244484C8000B3AF0 /* NSString+Trees.m in Sources */,
 				BC9CBA18244098B1007A1C82 /* SceneDelegate.m in Sources */,
 				BC9CBA4A244098DE007A1C82 /* PMTreeNode.m in Sources */,
 				BC9CBA4D244099A1007A1C82 /* PMBSTree.m in Sources */,
+				BC9DF68024448277000B3AF0 /* MJLevelOrderPrinter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

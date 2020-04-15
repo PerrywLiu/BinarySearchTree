@@ -20,6 +20,16 @@
     return self;
 }
 
+- (id)copyWithZone:(nullable NSZone *)zone
+{
+    PMTreeNode *node = [[PMTreeNode alloc]init];
+    node.value = self.value;
+    node.parent = self.parent;
+    node.left = self.left;
+    node.right = self.right;
+    return node;
+}
+
 - (BOOL)isLeaf
 {
     return self.left == nil && self.right == nil;

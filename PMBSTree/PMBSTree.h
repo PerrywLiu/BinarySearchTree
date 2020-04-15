@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "PMTreeNode.h"
 
+///遍历后得到的节点元素
+typedef void(^TraversalAccomplishBlock)(PMTreeNode * _Nullable node);
+
 NS_ASSUME_NONNULL_BEGIN
 
 /// 二叉搜索树
@@ -33,28 +36,33 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)containsElement:(id)element;
 
 /// 从根节点开始前序遍历
-- (void)preOrderTraversal;
+- (void)preOrderTraversal:(TraversalAccomplishBlock)accomplishBlock;
 
 /// 从某个节点开始前序遍历
 /// @param node 遍历的节点
-- (void)preOrderTraversal:(PMTreeNode *)node;
+- (void)preOrderTraversal:(PMTreeNode *)node accomplish:(TraversalAccomplishBlock)accomplishBlock;
 
 /// 从根节点开始中序遍历
-- (void)inOrderTraversal;
+- (void)inOrderTraversal:(TraversalAccomplishBlock)accomplishBlock;
 
 /// 从某个节点开始中序遍历
 /// @param node 开始遍历的节点
-- (void)inOrderTraversal:(PMTreeNode *)node;
+- (void)inOrderTraversal:(PMTreeNode *)node accomplish:(TraversalAccomplishBlock)accomplishBlock;
 
 /// 从根节点开始后序遍历
-- (void)postOrderTraversal;
+- (void)postOrderTraversal:(TraversalAccomplishBlock)accomplishBlock;
 
 /// 从某个节点开始后序遍历
 /// @param node 开始后序遍历的节点
-- (void)postOrderTraversal:(PMTreeNode *)node;
+- (void)postOrderTraversal:(PMTreeNode *)node accomplish:(TraversalAccomplishBlock)accomplishBlock;
 
 /// 层序遍历
-- (void)levelOrderTraversal;
+- (void)levelOrderTraversal:(TraversalAccomplishBlock)accomplishBlock;
+
+/// 从某个节点开始遍历
+/// @param node 进行层序遍历的节点
+/// @param accomplishBlock 遍历到的节点元素
+- (void)levelOrderTraversal:(PMTreeNode *)node accomplish:(TraversalAccomplishBlock)accomplishBlock;
 
 /// 是否是完全二叉树
 - (BOOL)isComplete;
@@ -85,6 +93,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 获取根节点
 - (PMTreeNode *)rootNode;
 
+/// 寻找element所在的节点
+/// @param element 节点元素值
+- (PMTreeNode *)nodeOfElement:(id)element;
 @end
 
 NS_ASSUME_NONNULL_END
