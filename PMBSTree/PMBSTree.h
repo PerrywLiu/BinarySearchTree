@@ -96,6 +96,14 @@ NS_ASSUME_NONNULL_BEGIN
 /// 寻找element所在的节点
 /// @param element 节点元素值
 - (PMTreeNode *)nodeOfElement:(id)element;
+
+/// 翻转二叉树
+- (void)reversalTree;
+
+/// 从某个节点开始翻转二叉树
+/// 前序遍历
+/// @param node 开始翻转的节点
+- (void)reversalTreeFromNode:(PMTreeNode *)node;
 @end
 
 NS_ASSUME_NONNULL_END

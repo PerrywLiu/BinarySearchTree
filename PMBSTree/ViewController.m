@@ -38,9 +38,9 @@
     [tree addElement:@"17"];
 //    [tree addElement:@"5"];
     [tree addElement:@"11"];
-//    [tree addElement:@"14"];
-//    [tree addElement:@"12"];
-//    [tree addElement:@"16"];
+    [tree addElement:@"14"];
+    [tree addElement:@"12"];
+    [tree addElement:@"16"];
     
     ///前序遍历
 //    NSLog(@"前序遍历");
@@ -55,45 +55,48 @@
 //    [tree postOrderTraversal];
     
     ///层序遍历
-    NSLog(@"层序遍历");
-    [tree levelOrderTraversal:^(PMTreeNode * _Nullable node) {
-        NSLog(@"%@",node.value);
-    }];
+//    NSLog(@"层序遍历");
+//    [tree levelOrderTraversal:^(PMTreeNode * _Nullable node) {
+//        NSLog(@"%@",node.value);
+//    }];
+//
+//    ///寻找前驱节点
+//    PMTreeNode *node = [tree nodeOfElement:@"11"];
+//    PMTreeNode *preNode = [tree predecessorNode:node];
+//    NSLog(@"%@的前驱结点为 = %@",node.value,preNode.value);
+//
+//    ///寻找后继节点
+//
+//    node = [tree nodeOfElement:@"17"];
+//    PMTreeNode *successorNode = [tree successorNode:node];
+//    NSLog(@"%@的后继节点为：%@",node.value,successorNode.value);
+//
+//    ///删除节点
+//    NSLog(@"删除节点：%@前的中序遍历：",node.value);
+//    [tree inOrderTraversal:^(PMTreeNode * _Nullable node) {
+//        NSLog(@"%@",node.value);
+//    }];
+//
+//    [tree removeNode:node];
+//    NSLog(@"删除节点后的中序遍历：");
+//    [tree inOrderTraversal:^(PMTreeNode * _Nullable node) {
+//        NSLog(@"%@",node.value);
+//    }];
+//
+//    ///求二叉树高度
+//    NSUInteger height = [tree treeHeight];
+//    NSLog(@"高度为：%ld",height);
+//
+//    ///求二叉树元素个数
+//    NSUInteger size = [tree treeSize];
+//    NSLog(@"二叉搜索树共有%ld个元素",size);
+//
+//    ///是否是完全二叉树
+//    BOOL isComplete = [tree isComplete];
+//    NSLog(@"是否为完全二叉树：%d",isComplete);
     
-    ///寻找前驱节点
-    PMTreeNode *node = [tree nodeOfElement:@"11"];
-    PMTreeNode *preNode = [tree predecessorNode:node];
-    NSLog(@"%@的前驱结点为 = %@",node.value,preNode.value);
-    
-    ///寻找后继节点
-    
-    node = [tree nodeOfElement:@"17"];
-    PMTreeNode *successorNode = [tree successorNode:node];
-    NSLog(@"%@的后继节点为：%@",node.value,successorNode.value);
-    
-    ///删除节点
-    NSLog(@"删除节点：%@前的中序遍历：",node.value);
-    [tree inOrderTraversal:^(PMTreeNode * _Nullable node) {
-        NSLog(@"%@",node.value);
-    }];
-    
-    [tree removeNode:node];
-    NSLog(@"删除节点后的中序遍历：");
-    [tree inOrderTraversal:^(PMTreeNode * _Nullable node) {
-        NSLog(@"%@",node.value);
-    }];
-    
-    ///求二叉树高度
-    NSUInteger height = [tree treeHeight];
-    NSLog(@"高度为：%ld",height);
-    
-    ///求二叉树元素个数
-    NSUInteger size = [tree treeSize];
-    NSLog(@"二叉搜索树共有%ld个元素",size);
-    
-    ///是否是完全二叉树
-    BOOL isComplete = [tree isComplete];
-    NSLog(@"是否为完全二叉树：%d",isComplete);
+    ///翻转二叉树
+    [tree reversalTree];
 }
 
 @end

@@ -209,6 +209,27 @@
     return [self nodeOfElement:element] ? YES : NO;
 }
 
+- (void)reversalTree
+{
+    [self reversalTreeFromNode:_rootNode];
+}
+
+- (void)reversalTreeFromNode:(PMTreeNode *)node
+{
+    if (node == nil) {
+        return;
+    }
+    
+    NSLog(@"%@",node.value);
+    
+    PMTreeNode *tmp = node.left;
+    node.left = node.right;
+    node.right = tmp;
+    
+    [self reversalTreeFromNode:node.left];
+    [self reversalTreeFromNode:node.right];
+}
+
 #pragma mark - 遍历
 ///前序遍历
 - (void)preOrderTraversal:(TraversalAccomplishBlock)accomplishBlock
@@ -312,6 +333,7 @@
     }
     return 0;
 }
+
 
 #pragma mark - private method
 
