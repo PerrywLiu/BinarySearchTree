@@ -12,11 +12,24 @@
     NSUInteger _size;       /// 节点数目
     NSUInteger _height;      /// 树的高度
     PMTreeNode *_rootNode;   /// 根节点
+    
+    PMBSTCompareBlock _compareBlock;
+    id<PMBStreeCompareProtocol> _compareDelegate;
 }
 
 @end
 
 @implementation PMBSTree
+
+- (instancetype)initWithCampare:(PMBSTCompareBlock)compareBlock
+{
+    self = [super init];
+    if (self) {
+        _compareBlock = compareBlock;
+    }
+    
+    return self;
+}
 
 /// 添加元素，生成二叉搜索树
 /// @param element 待添加元素
@@ -355,16 +368,28 @@
 
 - (NSInteger)compareE1:(id)value1 withE2:(id)value2
 {
-    if ([value1 integerValue] > [value2 integerValue]) {
-        return 1;
+    if (_compareBlock) {
+        return _compareBlock(value1, value2);
     }
-    else if ([value1 integerValue] == [value2 integerValue]) {
-        return 0;
+    else if ([_compareDelegate respondsToSelector:@selector(compareElement1:withOther:)])
+    {
+        return [_compareDelegate compareElement1:value1 withOther:value2];
     }
-    else if ([value1 integerValue] < [value2 integerValue]) {
-        return -1;
+    else
+    {
+        return [value1 compare:value2];
     }
-    return 0;
+    
+//    if ([value1 integerValue] > [value2 integerValue]) {
+//        return 1;
+//    }
+//    else if ([value1 integerValue] == [value2 integerValue]) {
+//        return 0;
+//    }
+//    else if ([value1 integerValue] < [value2 integerValue]) {
+//        return -1;
+//    }
+//    return 0;
 }
 
 

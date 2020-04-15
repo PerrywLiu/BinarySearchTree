@@ -24,31 +24,40 @@
 
 - (void)testBSTree
 {
-    PMBSTree *tree = [[PMBSTree alloc]init];
-//    for (int i = 0; i < 100; i++) {
-//        NSString *element = [NSString stringWithFormat:@"%d",rand()%100];
-//        [tree addElement:element];
-//    }
-    [tree addElement:@"10"];
-    [tree addElement:@"8"];
-    [tree addElement:@"6"];
-    [tree addElement:@"9"];
-    [tree addElement:@"15"];
-    [tree addElement:@"13"];
-    [tree addElement:@"17"];
-//    [tree addElement:@"5"];
-    [tree addElement:@"11"];
-    [tree addElement:@"14"];
-    [tree addElement:@"12"];
-    [tree addElement:@"16"];
+    PMBSTree *tree = [[PMBSTree alloc]initWithCampare:^NSInteger(NSString * _Nonnull element1, NSString *  _Nonnull element2) {
+        NSInteger v1 = element1.integerValue;
+        NSInteger v2 = element2.integerValue;
+        if (v1 > v2) return 1;
+        else if (v1 == v2) return 0;
+        else return -1;
+        
+    }];
+    for (int i = 0; i < 100; i++) {
+        NSString *element = [NSString stringWithFormat:@"%d",rand()%100];
+        [tree addElement:element];
+    }
+//    [tree addElement:@"10"];
+//    [tree addElement:@"8"];
+//    [tree addElement:@"6"];
+//    [tree addElement:@"9"];
+//    [tree addElement:@"15"];
+//    [tree addElement:@"13"];
+//    [tree addElement:@"17"];
+////    [tree addElement:@"5"];
+//    [tree addElement:@"11"];
+//    [tree addElement:@"14"];
+//    [tree addElement:@"12"];
+//    [tree addElement:@"16"];
     
     ///前序遍历
 //    NSLog(@"前序遍历");
 //    [tree preOrderTraversal];
     
     ///中序遍历
-//    NSLog(@"中序遍历");
-//    [tree inOrderTraversal];
+    NSLog(@"中序遍历");
+    [tree inOrderTraversal:^(PMTreeNode * _Nullable node) {
+        NSLog(@"%@",node.value);
+    }];
     
     ///后续遍历
 //    NSLog(@"后序遍历");
@@ -99,7 +108,7 @@
 //    NSLog(@"是否为完全二叉树：%d",isComplete);
     
     ///翻转二叉树
-    [tree reversalTree];
+//    [tree reversalTree];
 }
 
 @end

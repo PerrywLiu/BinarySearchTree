@@ -9,15 +9,24 @@
 #import <Foundation/Foundation.h>
 #import "PMTreeNode.h"
 
+@protocol PMBStreeCompareProtocol <NSObject>
+
+- (NSInteger)compareElement1:(id _Nonnull )element1 withOther:(id _Nonnull)element2;
+
+@end
+
 ///遍历后得到的节点元素
 typedef void(^TraversalAccomplishBlock)(PMTreeNode * _Nullable node);
+
+///比较节点元素
+typedef NSInteger(^PMBSTCompareBlock)(id _Nonnull element1, id _Nonnull element2);
 
 NS_ASSUME_NONNULL_BEGIN
 
 /// 二叉搜索树
 @interface PMBSTree : NSObject
 
-
+- (instancetype)initWithCampare:(PMBSTCompareBlock)compareBlock;
 
 /// 添加元素
 /// @param element 节点元素
