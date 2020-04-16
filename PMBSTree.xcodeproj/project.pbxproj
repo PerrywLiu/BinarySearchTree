@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC9A2F9F2447F73D00862A70 /* PMBinaryTree.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9A2F9E2447F73D00862A70 /* PMBinaryTree.m */; };
+		BC9A2FA72448075600862A70 /* PMAVLTree.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9A2FA62448075600862A70 /* PMAVLTree.m */; };
+		BC9A2FAA2448091700862A70 /* PMAVLTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9A2FA92448091700862A70 /* PMAVLTreeNode.m */; };
 		BC9CBA15244098B1007A1C82 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9CBA14244098B1007A1C82 /* AppDelegate.m */; };
 		BC9CBA18244098B1007A1C82 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9CBA17244098B1007A1C82 /* SceneDelegate.m */; };
 		BC9CBA1B244098B1007A1C82 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9CBA1A244098B1007A1C82 /* ViewController.m */; };
@@ -42,6 +45,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC9A2F9D2447F73D00862A70 /* PMBinaryTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMBinaryTree.h; sourceTree = "<group>"; };
+		BC9A2F9E2447F73D00862A70 /* PMBinaryTree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMBinaryTree.m; sourceTree = "<group>"; };
+		BC9A2FA52448075600862A70 /* PMAVLTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMAVLTree.h; sourceTree = "<group>"; };
+		BC9A2FA62448075600862A70 /* PMAVLTree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMAVLTree.m; sourceTree = "<group>"; };
+		BC9A2FA82448091700862A70 /* PMAVLTreeNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMAVLTreeNode.h; sourceTree = "<group>"; };
+		BC9A2FA92448091700862A70 /* PMAVLTreeNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMAVLTreeNode.m; sourceTree = "<group>"; };
 		BC9CBA10244098B1007A1C82 /* PMBSTree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PMBSTree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC9CBA13244098B1007A1C82 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BC9CBA14244098B1007A1C82 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -100,6 +109,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC9A2F9C2447F71A00862A70 /* BinaryTree */ = {
+			isa = PBXGroup;
+			children = (
+				BC9CBA48244098DE007A1C82 /* PMTreeNode.h */,
+				BC9CBA49244098DE007A1C82 /* PMTreeNode.m */,
+				BC9A2F9D2447F73D00862A70 /* PMBinaryTree.h */,
+				BC9A2F9E2447F73D00862A70 /* PMBinaryTree.m */,
+			);
+			path = BinaryTree;
+			sourceTree = "<group>";
+		};
+		BC9A2FA32447F79A00862A70 /* BinarySearchTree */ = {
+			isa = PBXGroup;
+			children = (
+				BC9CBA4B244099A1007A1C82 /* PMBSTree.h */,
+				BC9CBA4C244099A1007A1C82 /* PMBSTree.m */,
+			);
+			path = BinarySearchTree;
+			sourceTree = "<group>";
+		};
+		BC9A2FA42448073E00862A70 /* AVL */ = {
+			isa = PBXGroup;
+			children = (
+				BC9A2FA52448075600862A70 /* PMAVLTree.h */,
+				BC9A2FA62448075600862A70 /* PMAVLTree.m */,
+				BC9A2FA82448091700862A70 /* PMAVLTreeNode.h */,
+				BC9A2FA92448091700862A70 /* PMAVLTreeNode.m */,
+			);
+			path = AVL;
+			sourceTree = "<group>";
+		};
 		BC9CBA07244098B1007A1C82 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +163,9 @@
 		BC9CBA12244098B1007A1C82 /* PMBSTree */ = {
 			isa = PBXGroup;
 			children = (
+				BC9A2FA42448073E00862A70 /* AVL */,
+				BC9A2FA32447F79A00862A70 /* BinarySearchTree */,
+				BC9A2F9C2447F71A00862A70 /* BinaryTree */,
 				BC9DF67824448277000B3AF0 /* MJPrinter */,
 				BC9CBA13244098B1007A1C82 /* AppDelegate.h */,
 				BC9CBA14244098B1007A1C82 /* AppDelegate.m */,
@@ -135,10 +178,6 @@
 				BC9CBA21244098B4007A1C82 /* LaunchScreen.storyboard */,
 				BC9CBA24244098B4007A1C82 /* Info.plist */,
 				BC9CBA25244098B4007A1C82 /* main.m */,
-				BC9CBA48244098DE007A1C82 /* PMTreeNode.h */,
-				BC9CBA49244098DE007A1C82 /* PMTreeNode.m */,
-				BC9CBA4B244099A1007A1C82 /* PMBSTree.h */,
-				BC9CBA4C244099A1007A1C82 /* PMBSTree.m */,
 			);
 			path = PMBSTree;
 			sourceTree = "<group>";
@@ -310,11 +349,14 @@
 			files = (
 				BC9DF68124448277000B3AF0 /* MJPrinter.m in Sources */,
 				BC9DF67F24448277000B3AF0 /* MJInorderPrinter.m in Sources */,
+				BC9A2F9F2447F73D00862A70 /* PMBinaryTree.m in Sources */,
 				BC9CBA1B244098B1007A1C82 /* ViewController.m in Sources */,
 				BC9CBA15244098B1007A1C82 /* AppDelegate.m in Sources */,
 				BC9CBA26244098B4007A1C82 /* main.m in Sources */,
+				BC9A2FA72448075600862A70 /* PMAVLTree.m in Sources */,
 				BC9DF684244484C8000B3AF0 /* NSString+Trees.m in Sources */,
 				BC9CBA18244098B1007A1C82 /* SceneDelegate.m in Sources */,
+				BC9A2FAA2448091700862A70 /* PMAVLTreeNode.m in Sources */,
 				BC9CBA4A244098DE007A1C82 /* PMTreeNode.m in Sources */,
 				BC9CBA4D244099A1007A1C82 /* PMBSTree.m in Sources */,
 				BC9DF68024448277000B3AF0 /* MJLevelOrderPrinter.m in Sources */,

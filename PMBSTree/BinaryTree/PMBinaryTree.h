@@ -1,8 +1,8 @@
 //
-//  PMBSTree.h
+//  PMBinaryTree.h
 //  PMBSTree
 //
-//  Created by LiuPW on 2020/4/10.
+//  Created by LiuPW on 2020/4/16.
 //  Copyright © 2020 LiuPW. All rights reserved.
 //
 
@@ -18,31 +18,19 @@
 ///遍历后得到的节点元素
 typedef void(^TraversalAccomplishBlock)(PMTreeNode * _Nullable node);
 
-///比较节点元素
-typedef NSInteger(^PMBSTCompareBlock)(id _Nonnull element1, id _Nonnull element2);
-
 NS_ASSUME_NONNULL_BEGIN
 
-/// 二叉搜索树
-@interface PMBSTree : NSObject
+@interface PMBinaryTree : NSObject
+{
+@protected
+    NSUInteger _size;       /// 节点数目    
+    PMTreeNode *_rootNode;   /// 根节点
+}
 
-- (instancetype)initWithCampare:(PMBSTCompareBlock)compareBlock;
-
-/// 添加元素
+/// 创建新节点
 /// @param element 节点元素
-- (void)addElement:(id)element;
-
-/// 删除节点元素
-/// @param element 节点元素
-- (void)removeElement:(id)element;
-
-/// 删除节点
-/// @param node 节点
-- (void)removeNode:(PMTreeNode*)node;
-
-/// 判断树中是否包含节点元素
-/// @param element 节点元素
-- (BOOL)containsElement:(id)element;
+/// @param parentNode 父节点
+- (PMTreeNode *)createNode:(id)element andParent:(PMTreeNode * _Nullable)parentNode;
 
 /// 从根节点开始前序遍历
 - (void)preOrderTraversal:(TraversalAccomplishBlock)accomplishBlock;
@@ -101,10 +89,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// 获取根节点
 - (PMTreeNode *)rootNode;
 
-/// 寻找element所在的节点
-/// @param element 节点元素值
-- (PMTreeNode *)nodeOfElement:(id)element;
-
 /// 翻转二叉树
 - (void)reversalTree;
 
@@ -112,6 +96,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 前序遍历
 /// @param node 开始翻转的节点
 - (void)reversalTreeFromNode:(PMTreeNode *)node;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -44,4 +44,18 @@
     return self.left && self.right;
 }
 
+- (BOOL)isLeftChild
+{
+    return self.parent && [self isEqual:self.parent.left];
+}
+
+- (BOOL)isRightChild
+{
+    return self.parent && [self isEqual:self.parent.right];
+}
+
+- (void)print
+{
+    NSLog(@"V(%@)--P(%@)--L(%@)---R(%@)",self.value,self.parent.value,self.left.value,self.right.value);
+}
 @end

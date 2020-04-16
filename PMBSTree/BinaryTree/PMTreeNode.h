@@ -30,6 +30,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// 是否有左右子树
 - (BOOL)hasTwoChildren;
 
+/// 左子树
+- (BOOL)isLeftChild;
+/// 右子树
+- (BOOL)isRightChild;
+
+- (void)print;
 @end
 
 NS_ASSUME_NONNULL_END
