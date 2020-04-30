@@ -25,6 +25,8 @@
 		BC9DF68024448277000B3AF0 /* MJLevelOrderPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9DF67C24448277000B3AF0 /* MJLevelOrderPrinter.m */; };
 		BC9DF68124448277000B3AF0 /* MJPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9DF67D24448277000B3AF0 /* MJPrinter.m */; };
 		BC9DF684244484C8000B3AF0 /* NSString+Trees.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9DF683244484C8000B3AF0 /* NSString+Trees.m */; };
+		BC9E7849245968AE008357EF /* PMBalanceBinarySearchTree.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9E7848245968AE008357EF /* PMBalanceBinarySearchTree.m */; };
+		BCA7513A245A7F120084A0DF /* PMRedBlackTree.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA75139245A7F120084A0DF /* PMRedBlackTree.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,10 @@
 		BC9DF682244484C8000B3AF0 /* NSString+Trees.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Trees.h"; sourceTree = "<group>"; };
 		BC9DF683244484C8000B3AF0 /* NSString+Trees.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Trees.m"; sourceTree = "<group>"; };
 		BC9DF685244484D8000B3AF0 /* MJBinaryTreeInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJBinaryTreeInfo.h; sourceTree = "<group>"; };
+		BC9E7847245968AE008357EF /* PMBalanceBinarySearchTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMBalanceBinarySearchTree.h; sourceTree = "<group>"; };
+		BC9E7848245968AE008357EF /* PMBalanceBinarySearchTree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMBalanceBinarySearchTree.m; sourceTree = "<group>"; };
+		BCA75138245A7F120084A0DF /* PMRedBlackTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMRedBlackTree.h; sourceTree = "<group>"; };
+		BCA75139245A7F120084A0DF /* PMRedBlackTree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMRedBlackTree.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +169,8 @@
 		BC9CBA12244098B1007A1C82 /* PMBSTree */ = {
 			isa = PBXGroup;
 			children = (
+				BC9E78462459688C008357EF /* BalanceBinarySearchTree */,
+				BC9E7845245967F8008357EF /* RBTree */,
 				BC9A2FA42448073E00862A70 /* AVL */,
 				BC9A2FA32447F79A00862A70 /* BinarySearchTree */,
 				BC9A2F9C2447F71A00862A70 /* BinaryTree */,
@@ -215,6 +223,24 @@
 			);
 			name = MJPrinter;
 			path = "../../../../../Downloads/BinaryTrees-master/BinaryTreePrinterOC/BinaryTreePrinterOC/MJBinaryTrees/MJPrinter";
+			sourceTree = "<group>";
+		};
+		BC9E7845245967F8008357EF /* RBTree */ = {
+			isa = PBXGroup;
+			children = (
+				BCA75138245A7F120084A0DF /* PMRedBlackTree.h */,
+				BCA75139245A7F120084A0DF /* PMRedBlackTree.m */,
+			);
+			path = RBTree;
+			sourceTree = "<group>";
+		};
+		BC9E78462459688C008357EF /* BalanceBinarySearchTree */ = {
+			isa = PBXGroup;
+			children = (
+				BC9E7847245968AE008357EF /* PMBalanceBinarySearchTree.h */,
+				BC9E7848245968AE008357EF /* PMBalanceBinarySearchTree.m */,
+			);
+			path = BalanceBinarySearchTree;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,8 +381,10 @@
 				BC9CBA26244098B4007A1C82 /* main.m in Sources */,
 				BC9A2FA72448075600862A70 /* PMAVLTree.m in Sources */,
 				BC9DF684244484C8000B3AF0 /* NSString+Trees.m in Sources */,
+				BC9E7849245968AE008357EF /* PMBalanceBinarySearchTree.m in Sources */,
 				BC9CBA18244098B1007A1C82 /* SceneDelegate.m in Sources */,
 				BC9A2FAA2448091700862A70 /* PMAVLTreeNode.m in Sources */,
+				BCA7513A245A7F120084A0DF /* PMRedBlackTree.m in Sources */,
 				BC9CBA4A244098DE007A1C82 /* PMTreeNode.m in Sources */,
 				BC9CBA4D244099A1007A1C82 /* PMBSTree.m in Sources */,
 				BC9DF68024448277000B3AF0 /* MJLevelOrderPrinter.m in Sources */,
@@ -531,6 +559,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LUT9P67YCC;
 				INFOPLIST_FILE = PMBSTree/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -548,6 +577,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LUT9P67YCC;
 				INFOPLIST_FILE = PMBSTree/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

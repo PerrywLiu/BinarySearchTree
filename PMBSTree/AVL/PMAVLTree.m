@@ -25,7 +25,10 @@
         }
         else
         {
+            ///恢复平衡
             [self reBlance:avlNode];
+            ///整棵树恢复平衡
+            break;
         }
     }
     
