@@ -11,6 +11,11 @@
 
 @implementation PMAVLTree
 
+- (PMTreeNode *)createNode:(id)element andParent:(PMTreeNode *)parentNode
+{
+    return [[PMAVLTreeNode alloc]initValue:element withParent:parentNode];
+}
+
 - (void)afterAdd:(PMTreeNode *)node
 {
     if (node == nil) {
@@ -31,12 +36,6 @@
             break;
         }
     }
-    
-}
-
-- (PMTreeNode *)createNode:(id)element andParent:(PMTreeNode *)parentNode
-{
-    return [[PMAVLTreeNode alloc]initValue:element withParent:parentNode];
 }
 
 - (void)afterRemove:(PMAVLTreeNode *)avlNode
@@ -105,56 +104,14 @@
     }
 }
 
-/// 坐旋转
-/// @param grandNode 第一个打破平衡的节点 祖父节点
-- (void)rotateLeft:(PMAVLTreeNode *)grandNode
-{
-    PMAVLTreeNode *parentNode = (PMAVLTreeNode *)grandNode.right;
-    PMAVLTreeNode *childNode = (PMAVLTreeNode *)parentNode.left;
-    grandNode.right = childNode;
-    parentNode.left = grandNode;
-    [self afterRotate:grandNode parentNode:parentNode childNode:childNode];
-}
-
-/// 右旋转
-/// @param grandNode 第一个打破平衡点节点 祖父节点
-- (void)rotateRight:(PMAVLTreeNode *)grandNode
-{
-    PMAVLTreeNode *parentNode = (PMAVLTreeNode *)grandNode.left;
-    PMAVLTreeNode *childNode = (PMAVLTreeNode *)parentNode.right;
-    parentNode.right = grandNode;
-    grandNode.left = childNode;
-    [self afterRotate:grandNode parentNode:parentNode childNode:childNode];
-}
-
 /// 旋转后，更改父节点
 /// @param grandNode 祖父节点
 /// @param parentNode 父节点
 /// @param childNode 子节点
 - (void)afterRotate:(PMAVLTreeNode *)grandNode parentNode:(PMAVLTreeNode *)parentNode childNode:(PMAVLTreeNode *)childNode
 {
-    ///改变父节点的parent指向
-    parentNode.parent = grandNode.parent;
-    if ([grandNode isLeftChild]) {
-        grandNode.parent.left = parentNode;
-    }
-    else if([grandNode isRightChild])
-    {
-        grandNode.parent.right = parentNode;
-    }
-    else
-    {
-        ///grand 是根节点
-        _rootNode = parentNode;
-    }
     
-    ///更新祖父节点的parent指向
-    grandNode.parent = parentNode;
-    
-    ///更新child节点的parent指向
-    if (childNode != nil) {
-        childNode.parent = grandNode;
-    }
+    [super afterRotate:grandNode parentNode:parentNode childNode:childNode];
     
     [self updateHeight:grandNode];
     [self updateHeight:parentNode];

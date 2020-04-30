@@ -27,6 +27,7 @@
 		BC9DF684244484C8000B3AF0 /* NSString+Trees.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9DF683244484C8000B3AF0 /* NSString+Trees.m */; };
 		BC9E7849245968AE008357EF /* PMBalanceBinarySearchTree.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9E7848245968AE008357EF /* PMBalanceBinarySearchTree.m */; };
 		BCA7513A245A7F120084A0DF /* PMRedBlackTree.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA75139245A7F120084A0DF /* PMRedBlackTree.m */; };
+		BCA7513D245A8AD70084A0DF /* PMRBNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA7513C245A8AD70084A0DF /* PMRBNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,8 @@
 		BC9E7848245968AE008357EF /* PMBalanceBinarySearchTree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMBalanceBinarySearchTree.m; sourceTree = "<group>"; };
 		BCA75138245A7F120084A0DF /* PMRedBlackTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMRedBlackTree.h; sourceTree = "<group>"; };
 		BCA75139245A7F120084A0DF /* PMRedBlackTree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMRedBlackTree.m; sourceTree = "<group>"; };
+		BCA7513B245A8AD70084A0DF /* PMRBNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMRBNode.h; sourceTree = "<group>"; };
+		BCA7513C245A8AD70084A0DF /* PMRBNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMRBNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +233,8 @@
 			children = (
 				BCA75138245A7F120084A0DF /* PMRedBlackTree.h */,
 				BCA75139245A7F120084A0DF /* PMRedBlackTree.m */,
+				BCA7513B245A8AD70084A0DF /* PMRBNode.h */,
+				BCA7513C245A8AD70084A0DF /* PMRBNode.m */,
 			);
 			path = RBTree;
 			sourceTree = "<group>";
@@ -385,6 +390,7 @@
 				BC9CBA18244098B1007A1C82 /* SceneDelegate.m in Sources */,
 				BC9A2FAA2448091700862A70 /* PMAVLTreeNode.m in Sources */,
 				BCA7513A245A7F120084A0DF /* PMRedBlackTree.m in Sources */,
+				BCA7513D245A8AD70084A0DF /* PMRBNode.m in Sources */,
 				BC9CBA4A244098DE007A1C82 /* PMTreeNode.m in Sources */,
 				BC9CBA4D244099A1007A1C82 /* PMBSTree.m in Sources */,
 				BC9DF68024448277000B3AF0 /* MJLevelOrderPrinter.m in Sources */,

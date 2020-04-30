@@ -54,8 +54,25 @@
     return self.parent && [self isEqual:self.parent.right];
 }
 
+- (PMTreeNode *)sibling
+{
+    if ([self isLeftChild]) {
+        return self.parent.right;
+    }
+    else if ([self isRightChild])
+    {
+        return self.parent.left;
+    }
+    return nil;
+}
+
 - (void)print
 {
     NSLog(@"V(%@)--P(%@)--L(%@)---R(%@)",self.value,self.parent.value,self.left.value,self.right.value);
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"V(%@)--P(%@)--L(%@)---R(%@)", self.value,self.parent.value,self.left.value,self.right.value];
 }
 @end

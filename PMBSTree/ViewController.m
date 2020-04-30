@@ -11,6 +11,8 @@
 #import "PMBinaryTree.h"
 #import "PMAVLTree.h"
 #import "MJLevelOrderPrinter.h"
+#import "PMRedBlackTree.h"
+#import "PMRBNode.h"
 
 @interface ViewController ()
 
@@ -22,7 +24,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 //    [self testBSTree];
-    [self testAVLTree];
+//    [self testAVLTree];
+    [self testRBTree];
 }
 
 - (void)testBSTree
@@ -164,6 +167,28 @@
     ///求二叉树高度
     height = [avlTree treeHeight];
     NSLog(@"高度为：%ld",height);
+}
+
+/// 测试红黑树
+- (void)testRBTree
+{
+    PMRedBlackTree *rbTree = [[PMRedBlackTree alloc]initWithCampare:^NSInteger(NSString *  _Nonnull element1, NSString * _Nonnull element2) {
+         NSInteger v1 = element1.integerValue;
+         NSInteger v2 = element2.integerValue;
+         if (v1 > v2) return 1;
+         else if (v1 == v2) return 0;
+         else return -1;
+    }];
+    
+    NSArray *elementArray = @[@"10",@"8",@"6",@"9",@"15",@"13",@"17",@"5",@"11",@"14",@"12",@"16",@"40"];
+    for (NSString *e in elementArray) {
+        [rbTree addElement:e];
+    }
+ 
+    [rbTree inOrderTraversal:^(PMTreeNode * _Nullable node) {
+        PMRBNode *rbNode = (PMRBNode *)node;
+        NSLog(@"%@",[rbNode description]);
+    }];
 }
 
 @end

@@ -6,11 +6,11 @@
 //  Copyright © 2020 LiuPW. All rights reserved.
 //
 
-#import "PMBSTree.h"
+#import "PMBalanceBinarySearchTree.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PMAVLTree : PMBSTree
+@interface PMAVLTree : PMBalanceBinarySearchTree
 
 @end
 

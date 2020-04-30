@@ -18,7 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, strong) PMTreeNode *right;
 /// 父节点
 @property (nonatomic, nullable, strong) PMTreeNode *parent;
-
+/// 兄弟节点
+@property (nonatomic, nullable, strong) PMTreeNode *sibling;
 /// 节点值
 @property (nonatomic, nullable, strong) id value;
 
