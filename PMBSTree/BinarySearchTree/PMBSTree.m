@@ -103,6 +103,55 @@
         node = preNode;
     }
     
+    ///处理度为1或度为0的节点
+    PMTreeNode *parent = node.parent;
+    PMTreeNode *replacementNode = node.left ? node.left : node.right;
+    if (replacementNode) {
+        ///度为1的节点
+        if(parent == nil)
+        {
+            ///删除的节点为根节点
+            _rootNode = replacementNode;
+        }
+        else
+        {
+            ///删除节点非根节点
+            if ([node isLeftChild]) {
+                parent.left = replacementNode;
+                replacementNode.parent = parent;
+            }
+            else
+            {
+                parent.right = replacementNode;
+                replacementNode.parent = parent;
+            }
+        }
+        
+        ///平衡二叉树
+        [self afterRemove:replacementNode];
+    }
+    else
+    {
+        ///度为0的节点
+        if (parent) {
+            if ([node isLeftChild]) {
+                parent.left = nil;
+            }
+            else
+            {
+                parent.right = nil;
+            }
+        }
+        else
+        {
+            ///叶子节点为根节点
+            _rootNode = nil;
+        }
+        
+        [self afterRemove:node];
+    }
+    
+    /*
     ///度为1 或 度为0的节点
     PMTreeNode *childNode = node.left ? node.left : node.right;
     PMTreeNode *parentNode = node.parent;
@@ -119,6 +168,7 @@
     [self afterRemove:parentNode];
     
     node.parent = nil;
+    */
     
     _size--;
 }

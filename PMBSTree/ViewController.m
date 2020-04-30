@@ -24,8 +24,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 //    [self testBSTree];
-//    [self testAVLTree];
-    [self testRBTree];
+    [self testAVLTree];
+//    [self testRBTree];
 }
 
 - (void)testBSTree
@@ -128,23 +128,11 @@
             else return -1;
             
         }];
-    //    for (int i = 0; i < 100; i++) {
-    //        NSString *element = [NSString stringWithFormat:@"%d",rand()%100];
-    //        [tree addElement:element];
-    //    }
-    [avlTree addElement:@"10"];
-    [avlTree addElement:@"8"];
-    [avlTree addElement:@"6"];
-    [avlTree addElement:@"9"];
-    [avlTree addElement:@"15"];
-    [avlTree addElement:@"13"];
-    [avlTree addElement:@"17"];
-    [avlTree addElement:@"5"];
-    [avlTree addElement:@"11"];
-    [avlTree addElement:@"14"];
-    [avlTree addElement:@"12"];
-    [avlTree addElement:@"16"];
     
+    NSArray *elementArray = @[@"10",@"8",@"6",@"9",@"15",@"13",@"17",@"5",@"11",@"14",@"12",@"16",@"40"];
+    for (NSString *e in elementArray) {
+        [avlTree addElement:e];
+    }
     
     [avlTree preOrderTraversal:^(PMTreeNode * _Nullable node) {
         [node print];
@@ -154,19 +142,34 @@
     NSUInteger height = [avlTree treeHeight];
     NSLog(@"高度为：%ld",height);
     
-    PMTreeNode *node = [avlTree nodeOfElement:@"15"];
-    [avlTree removeNode:node];
-    [avlTree removeNode:[avlTree nodeOfElement:@"13"]];
-    [avlTree removeNode:[avlTree nodeOfElement:@"6"]];
-    [avlTree removeNode:[avlTree nodeOfElement:@"5"]];
-    NSLog(@"删除元素后");
-    [avlTree preOrderTraversal:^(PMTreeNode * _Nullable node) {
-        [node print];
-    }];
-    
-    ///求二叉树高度
-    height = [avlTree treeHeight];
-    NSLog(@"高度为：%ld",height);
+//    PMTreeNode *node = [avlTree nodeOfElement:@"15"];
+//    [avlTree removeNode:node];
+//    NSLog(@"删除元素15后");
+//    [avlTree preOrderTraversal:^(PMTreeNode * _Nullable node) {
+//        [node print];
+//    }];
+//
+//    [avlTree removeNode:[avlTree nodeOfElement:@"13"]];
+//    NSLog(@"删除元素13后");
+//    [avlTree preOrderTraversal:^(PMTreeNode * _Nullable node) {
+//        [node print];
+//    }];
+//
+//    [avlTree removeNode:[avlTree nodeOfElement:@"6"]];
+//    NSLog(@"删除元素6后");
+//    [avlTree preOrderTraversal:^(PMTreeNode * _Nullable node) {
+//        [node print];
+//    }];
+//
+//    [avlTree removeNode:[avlTree nodeOfElement:@"5"]];
+//    NSLog(@"删除元素5后");
+//    [avlTree preOrderTraversal:^(PMTreeNode * _Nullable node) {
+//        [node print];
+//    }];
+//
+//    ///求二叉树高度
+//    height = [avlTree treeHeight];
+//    NSLog(@"高度为：%ld",height);
 }
 
 /// 测试红黑树

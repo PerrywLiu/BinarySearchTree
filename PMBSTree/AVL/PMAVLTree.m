@@ -18,20 +18,15 @@
 
 - (void)afterAdd:(PMTreeNode *)node
 {
-    if (node == nil) {
-        return;
-    }
-    
-    PMAVLTreeNode *avlNode = (PMAVLTreeNode *)node;
     ///找到第一个不平衡的节点
-    while ((avlNode = (PMAVLTreeNode*)avlNode.parent) != nil) {
-        if ([self isBalance:avlNode]) {
-            [self updateHeight:avlNode];
+    while ((node = node.parent) != nil) {
+        if ([self isBalance:node]) {
+            [self updateHeight:node];
         }
         else
         {
             ///恢复平衡
-            [self reBlance:avlNode];
+            [self reBlance:node];
             ///整棵树恢复平衡
             break;
         }
@@ -55,20 +50,21 @@
 }
 
 #pragma mark - privateMethod
-- (BOOL)isBalance:(PMAVLTreeNode *)avlNode
+- (BOOL)isBalance:(PMTreeNode *)avlNode
 {
-    NSInteger balanceFactor = labs(avlNode.balanceFactor);
+    NSInteger balanceFactor = labs(((PMAVLTreeNode*)avlNode).balanceFactor);
+    NSLog(@"balanceFactor:%ld",balanceFactor);
     return balanceFactor < 2;
 }
 
-- (void)updateHeight:(PMAVLTreeNode *)avlNode
+- (void)updateHeight:(PMTreeNode *)avlNode
 {
-    [avlNode updateHeight];
+    [(PMAVLTreeNode *)avlNode updateHeight];
 }
 
-- (void)reBlance:(PMAVLTreeNode *)grandAvlNode
+- (void)reBlance:(PMTreeNode *)grandAvlNode
 {
-    PMAVLTreeNode *parentNode = [grandAvlNode tallerChild];
+    PMAVLTreeNode *parentNode = [(PMAVLTreeNode *)grandAvlNode tallerChild];
     PMAVLTreeNode *node = [parentNode tallerChild];
     
     /**
