@@ -24,8 +24,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 //    [self testBSTree];
-    [self testAVLTree];
-//    [self testRBTree];
+//    [self testAVLTree];
+    [self testRBTree];
 }
 
 - (void)testBSTree
@@ -134,9 +134,9 @@
         [avlTree addElement:e];
     }
     
-    [avlTree preOrderTraversal:^(PMTreeNode * _Nullable node) {
-        [node print];
-    }];
+//    [avlTree preOrderTraversal:^(PMTreeNode * _Nullable node) {
+//        [node print];
+//    }];
     
     ///求二叉树高度
     NSUInteger height = [avlTree treeHeight];
@@ -188,7 +188,19 @@
         [rbTree addElement:e];
     }
  
-    [rbTree inOrderTraversal:^(PMTreeNode * _Nullable node) {
+    [rbTree preOrderTraversal:^(PMTreeNode * _Nullable node) {
+        PMRBNode *rbNode = (PMRBNode *)node;
+        NSLog(@"%@",[rbNode description]);
+    }];
+    
+    NSLog(@"");
+    ///删除
+    [rbTree removeNode:[rbTree nodeOfElement:@"10"]];
+    [rbTree removeNode:[rbTree nodeOfElement:@"12"]];
+    [rbTree removeNode:[rbTree nodeOfElement:@"14"]];
+    [rbTree removeNode:[rbTree nodeOfElement:@"17"]];
+    [rbTree removeNode:[rbTree nodeOfElement:@"40"]];
+    [rbTree preOrderTraversal:^(PMTreeNode * _Nullable node) {
         PMRBNode *rbNode = (PMRBNode *)node;
         NSLog(@"%@",[rbNode description]);
     }];
